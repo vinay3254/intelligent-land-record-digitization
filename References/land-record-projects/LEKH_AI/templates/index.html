@@ -1,0 +1,157 @@
+﻿﻿<!DOCTYPE html>
+<html lang="{% if lang == 'hi' %}hi{% else %}en{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'hi' %}LekhAI | डिजिटल लेजर अथॉरिटी{% else %}LekhAI | Digital Ledger Authority{% endif %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.3">
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand-block">
+                <div class="brand-mark">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="brand-title">LekhAI</div>
+                    <div class="brand-sub">{% if lang == 'hi' %}GIGW 3.0 - DPDP अनुपालक{% else %}GIGW 3.0 - DPDP Compliant{% endif %}</div>
+                </div>
+            </div>
+
+            <nav class="topnav">
+                <a class="topnav-link active" href="/">{% if lang == 'hi' %}होम{% else %}Home{% endif %}</a>
+                <a class="topnav-link" href="/verify">{% if lang == 'hi' %}OCR सत्यापन{% else %}OCR Verify{% endif %}</a>
+                <a class="topnav-link" href="/dashboard">{% if lang == 'hi' %}डैशबोर्ड{% else %}Dashboard{% endif %}</a>
+            </nav>
+
+            <div class="topbar-actions">
+                <button class="tone-button" type="button" onclick="toggleLanguage()">
+                    {% if lang == 'hi' %}English{% else %}हिन्दी{% endif %}
+                </button>
+                <a class="primary-button" href="/dashboard" style="text-decoration: none; display: inline-block; text-align: center;">
+                    {% if lang == 'hi' %}अधिकारी पोर्टल{% else %}Officer Portal{% endif %}
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="kicker-row">
+                        <span class="chip chip-success">{% if lang == 'hi' %}GIGW 3.0 प्रमाणित{% else %}GIGW 3.0 Certified{% endif %}</span>
+                        <span class="rule-line"></span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        {% if lang == 'hi' %}
+                        डिजिटल भूमि रिकॉर्ड के लिए<br>
+                        <span>अपरिवर्तनीय लेजर।</span>
+                        {% else %}
+                        Immutable Ledger for<br>
+                        <span>Digital Land Records.</span>
+                        {% endif %}
+                    </h1>
+
+                    <p class="hero-text">
+                        {% if lang == 'hi' %}
+                        सुरक्षित रूप से भूमि रिकॉर्ड अपलोड, निकालें, टोकनाइज़ करें और सत्यापित करें। LekhAI एक परिनियोज्य वर्कफ़्लो में गोपनीयता-सुरक्षित प्रसंस्करण, अपरिवर्तनीय हैशिंग और अधिकारी-ग्रेड ऑडिट दृश्यता को जोड़ती है।
+                        {% else %}
+                        Securely upload, extract, tokenize, and verify land records. LekhAI combines privacy-safe processing, immutable hashing, and officer-grade audit visibility in one deployable workflow.
+                        {% endif %}
+                    </p>
+
+                    <div class="search-panel" id="upload-entry">
+                        <div class="search-field">
+                            <label>{% if lang == 'hi' %}कार्यप्रवाह{% else %}Workflow{% endif %}</label>
+                            <div class="search-value">
+                                <span class="search-icon">→</span>
+                                <span>{% if lang == 'hi' %}अपलोड → OCR → गोपनीयता → लेजर{% else %}Upload → OCR → Privacy → Ledger{% endif %}</span>
+                            </div>
+                        </div>
+                    <a class="primary-button search-cta" href="/verify" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        {% if lang == 'hi' %}रिकॉर्ड अपलोड करें{% else %}Upload Record{% endif %}
+                    </a>
+                    </div>
+
+                    <div class="metric-row">
+                        <div class="metric-card">
+                            <span class="metric-label">{% if lang == 'hi' %}सुरक्षा{% else %}Security{% endif %}</span>
+                            <strong>{% if lang == 'hi' %}मुख्य डीबी में कोई आधार नहीं{% else %}No Aadhaar in main DB{% endif %}</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">{% if lang == 'hi' %}लेजर{% else %}Ledger{% endif %}</span>
+                            <strong>{% if lang == 'hi' %}SHA-256 श्रृंखला{% else %}SHA-256 chain{% endif %}</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">{% if lang == 'hi' %}ऑडिट{% else %}Audit{% endif %}</span>
+                            <strong>{% if lang == 'hi' %}रियल-टाइम सत्यापन{% else %}Real-time verification{% endif %}</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual-shell">
+                    <div class="hero-visual-card">
+                        <div class="hero-image-overlay"></div>
+                        <img alt="Archival government ledger visual" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhg1gFCL9paMNunkmIcZFfoqXvCZtWW88wbYEtKeLwjdQnGXbp2e0VMPCQSMar9t-uxGDbPHgUQ2qzZq9hosLEtr_4rEbFJkEpI0Rc3pj8xGgcBmaksYWVTYPY17OtCvhqU9Gn4hNwt9n68AkymBhQ3LLCaTFp0QlKz-5dBokU3crAJTd8mGe_0NuItCQqHqtAUrdUD8Mng7sHPk-6-di9ZXdSBkB58o1yBAGvoCnP3fG6aPDp8DZydsxnYAJ6_FyTWXhAYqD0oJo">
+                        <div class="hero-certificate glass-chip">
+                            <div class="hero-certificate-icon">✓</div>
+                            <div>
+                                <strong>{% if lang == 'hi' %}अखंडता श्रृंखला सक्रिय{% else %}Integrity Chain Active{% endif %}</strong>
+                                <p>{% if lang == 'hi' %}प्रत्येक सफल अपलोड एक सत्यापन योग्य लेजर ब्लॉक बनाता है।{% else %}Every successful upload creates a verifiable ledger block.{% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <div class="feature-grid">
+                <article class="feature-card feature-card-wide">
+                    <div class="feature-icon">🛡️</div>
+                    <h2>{% if lang == 'hi' %}DPDP-संरेखित रिकॉर्ड प्रसंस्करण{% else %}DPDP-aligned Record Processing{% endif %}</h2>
+                    <p>{% if lang == 'hi' %}दस्तावेज़ों को एक संकीर्ण उद्देश्य के लिए संसाधित किया जाता है, अस्थायी फ़ाइलें हटा दी जाती हैं, और संवेदनशील पहचान मूल्यों को भंडारण से पहले टोकनाइज़ किया जाता है।{% else %}Documents are processed for a narrow purpose, temporary files are deleted, and sensitive identity values are tokenized before storage.{% endif %}</p>
+                    <div class="feature-tags">
+                        <span>{% if lang == 'hi' %}सहमति{% else %}Consent{% endif %}</span>
+                        <span>{% if lang == 'hi' %}मास्किंग{% else %}Masking{% endif %}</span>
+                        <span>{% if lang == 'hi' %}सुरक्षित रूप से हटाएं{% else %}Secure Delete{% endif %}</span>
+                    </div>
+                </article>
+
+                <article class="feature-card feature-card-primary">
+                    <div class="feature-icon">👁️</div>
+                    <h2>{% if lang == 'hi' %}अधिकारी ऑडिट दृश्य{% else %}Officer Audit View{% endif %}</h2>
+                    <p>{% if lang == 'hi' %}प्रत्येक रिकॉर्ड डैशबोर्ड के माध्यम से लेजर लिंकेज, सत्यापन स्थिति और छेड़छाड़ संकेतों को उजागर करता है।{% else %}Every record exposes ledger linkage, verification state, and tamper signals through the dashboard.{% endif %}</p>
+                    <a class="feature-link" href="/dashboard">{% if lang == 'hi' %}डैशबोर्ड खोलें{% else %}Open Dashboard{% endif %}</a>
+                </article>
+
+                <article class="feature-card feature-card-soft">
+                    <div class="feature-icon">🌐</div>
+                    <h2>{% if lang == 'hi' %}द्विभाषी अनुभव{% else %}Bilingual Experience{% endif %}</h2>
+                    <p>{% if lang == 'hi' %}नागरिक-सामना और अधिकारी-सामना दोनों प्रवाहों के लिए अंग्रेजी और हिंदी के बीच तेजी से स्विचिंग।{% else %}Fast switching between English and Hindi for both citizen-facing and officer-facing flows.{% endif %}</p>
+                </article>
+
+                <article class="feature-callout">
+                    <div>
+                        <p class="callout-kicker">{% if lang == 'hi' %}कानूनी दिशा{% else %}Legal Direction{% endif %}</p>
+                        <h3>{% if lang == 'hi' %}अगला कदम: धारा 65B प्रमाणन{% else %}Next Step: Section 65B Certification{% endif %}</h3>
+                        <p>{% if lang == 'hi' %}प्रोटोटाइप पहले से ही हैशिंग और ऑडिट का समर्थन करता है। अगला प्रमुख मॉड्यूल साक्ष्य वर्कफ़्लो के लिए प्रमाण पत्र निर्माण है।{% else %}The prototype already supports hashing and audit. The next major module is certificate generation for evidentiary workflows.{% endif %}</p>
+                    </div>
+                    <button class="success-button" type="button" onclick="location.href='/dashboard'">{% if lang == 'hi' %}ऑडिट की समीक्षा करें{% else %}Review Audit{% endif %}</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=1.3"></script>
+</body>
+</html>

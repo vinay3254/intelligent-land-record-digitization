@@ -1,0 +1,32 @@
+{{ generated_notice }}
+
+# Daily OCR Resources Update — {{ update_date }}
+
+{% for kind, entries in grouped.items() %}
+## {{ kind | title }}
+
+{% for entry in entries -%}
+- [{{ entry.name }}]({{ entry.url }}) — {{ entry.tasks }}{% if entry.summary %}: {{ entry.summary }}{% endif %}
+{% endfor %}
+
+{% endfor %}
+## Discovery Summary
+
+{% if source_summary %}
+{% for source, count in source_summary.items() -%}
+- {{ source }}: {{ count }} candidate(s)
+{% endfor %}
+{% else %}
+- Added through maintainer review.
+{% endif %}
+{% if source_errors %}
+
+### Degraded Sources
+
+{% for error in source_errors -%}
+- {{ error.source }}: unavailable — {{ error.error }}
+{% endfor %}
+
+This update is incomplete for the sources listed above. The next successful run re-covers them
+within the seven-day lookback window.
+{% endif %}

@@ -1,0 +1,20 @@
+{
+    "funsd": {
+      "name": "FUNSD",
+      "url": "https://guillaumejaume.github.io/FUNSD/dataset.zip",
+      "filetype": "zip",
+      "target_dir": "funsd"
+    },
+    "publaynet": {
+      "name": "PubLayNet",
+      "url": "https://dax-cdn.cdn.appdomain.cloud/dax-publaynet/1.0.0/publaynet.tar.gz",
+      "filetype": "tar.gz",
+      "target_dir": "publaynet"
+    },
+    "cord": {
+      "name": "CORD",
+      "url": "https://github.com/clovaai/cord/archive/refs/heads/master.zip",
+      "filetype": "zip",
+      "target_dir": "cord"
+    }
+  }

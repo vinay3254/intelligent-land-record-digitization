@@ -4,3 +4,38 @@ __pycache__/
 *.pyc
 .vscode/
 .idea/
+
+# Cloned reference repos — keep their inner .git/ out of OUR history
+references/*/*/.git/
+references/*/*/*/.git/
+
+# Noise inside cloned reference repos (we keep source, drop lockfiles/binary junk)
+**/node_modules/
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+**/__pycache__/
+**/*.pyc
+**/*.class
+**/build/
+**/dist/
+**/.next/
+**/.cache/
+
+# Python venvs (when we start building)
+venv/
+.venv/
+env/
+
+# Environment files
+.env
+.env.local
+*.env.local
+
+# OS / editor
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/

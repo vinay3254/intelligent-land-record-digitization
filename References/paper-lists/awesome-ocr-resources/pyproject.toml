@@ -20,7 +20,7 @@ ocr-resources = "ocr_resources.cli:app"
 [dependency-groups]
 dev = [
   "mypy>=1.17.0,<2",
-  "pytest>=8.4.1,<9",
+  "pytest>=8.4.1,<10",
   "pytest-cov>=6.2.1,<7",
   "respx>=0.22.0,<1",
   "ruff>=0.12.4,<1",

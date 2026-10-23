@@ -16,7 +16,7 @@ cryptography==46.0.6
 # --- OCR (Local preprocessing + Gemini Vision API) ---
 opencv-python-headless==4.13.0.92  # Image preprocessing only, no GUI (~30MB)
 numpy>=1.21.0                  # Compatible with opencv 4.13
-Pillow==12.2.0
+Pillow==13.0.0
 
 # --- LLM Field Extraction ---
 google-generativeai==0.8.6  # Gemini Flash Vision — structured extraction (~2MB)
